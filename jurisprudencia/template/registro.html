@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block title_head %}Registro{% endblock %}
+
+{% block jumbotron_content %}
+<div class = "text-center">
+<h1>Registro de Sentencia</h1>
+<br>
+</div>
+
+<div class = "col-sm-7" style="margin:0 auto" >
+  <form method="POST" action="">{% csrf_token %}
+  {{ e1_form|crispy }}
+    <hr>
+    <div class = "text-center col-md-0 col-md-offset-0">
+      <br>
+      <input class = "btn btn-success btn-lg" type='submit' value=' AGREGAR '/>
+    </div>
+  </form>
+  <form action="{% url 'inicio'%}">
+    <div class = "text-center col-md-0 col-md-offset-0">
+      <br>
+      <input class = "btn btn-danger btn-lg" type="submit" value="CANCELAR" />
+    </div>
+  </form>
+<div>
+
+
+{% endblock%}
